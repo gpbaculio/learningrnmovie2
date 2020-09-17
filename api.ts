@@ -1,6 +1,6 @@
 import { API_KEY } from "./config";
 
-interface Genres {
+export interface Genres {
   12: string;
   14: string;
   16: string;
@@ -22,27 +22,27 @@ interface Genres {
   10770: string;
 }
 
-interface ResultType {
+export interface ResultType {
   id: string;
   original_title: string;
   poster_path: string;
   backdrop_path: string;
-  vote_average: string;
+  vote_average: number;
   overview: string;
   release_date: string;
   genre_ids: (keyof Genres)[];
 }
 
-interface ResultstType {
+export interface ResultstType {
   results: ResultType[];
 }
 
-interface ResponseType {
+export interface MovieType {
   key: string;
   title: string;
   poster: string;
   backdrop: string;
-  rating: string;
+  rating: number;
   description: string;
   releaseDate: string;
   genres: string[];
@@ -76,7 +76,7 @@ const getImagePath = (path: string) =>
 const getBackdropPath = (path: string) =>
   `https://image.tmdb.org/t/p/w370_and_h556_multi_faces${path}`;
 
-export const getMovies = async (): Promise<ResponseType[]> => {
+export const getMovies = async (): Promise<MovieType[]> => {
   const { results }: ResultstType = await fetch(API_URL).then((x) => x.json());
   const movies = results.map(
     ({
@@ -99,5 +99,6 @@ export const getMovies = async (): Promise<ResponseType[]> => {
       genres: genre_ids.map((genre) => genres[genre]),
     })
   );
+  console.log(JSON.stringify(movies));
   return movies;
 };
