@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../rnAnimations"
+		},
+		{
+			"path": "../ui-rn-challenge"
+		},
+		{
+			"path": "../react-native-movie-2.0-carousel"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

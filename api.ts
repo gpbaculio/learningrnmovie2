@@ -99,6 +99,5 @@ export const getMovies = async (): Promise<MovieType[]> => {
       genres: genre_ids.map((genre) => genres[genre]),
     })
   );
-  console.log(JSON.stringify(movies));
   return movies;
 };

@@ -30,7 +30,7 @@ const Container = styled.View`
 `;
 
 const Text = styled.Text`
-  margin-right: 4;
+  margin-right: 4px;
   font-family: Menlo;
   font-size: 14px;
 `;

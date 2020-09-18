@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 
 const Loading = () => (
   <Container>
-    <Text>Loading</Text>
+    <Text>Loading...</Text>
   </Container>
 );
 
